@@ -298,15 +298,15 @@ body {
   font-weight: 300;
   font-family: Roboto, Arial, Helvetica, sans-serif;
   letter-spacing: 0.05rem;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
-@media(max-width:625px){
+@media(max-width:872px){
     .navbar{display: none}
     .search-bar #article-search{display: none}
 }
 
-@media(min-width:625px){
+@media(min-width:872px){
   .menu-wrap{display: none}
 }
 
