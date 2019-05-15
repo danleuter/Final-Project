@@ -267,20 +267,7 @@ i .fas {
   }
   
 
-.dashboard-bg{
 
-  background: black;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border: 10px solid black;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  height: 100vh; 
-  width: 100vw;
-} 
 
 
 /* Landing Page */
@@ -320,6 +307,28 @@ i .fas {
   letter-spacing: 0.05rem;
   /* text-transform: uppercase; */
 }
+
+.dashboard-bg {
+  margin-top: 70px;
+
+}
+
+.article-thumbnail {
+  margin: 10px;
+  background: url("../images/peter.jpg");
+  height: 200px;
+  width: 200px;
+  border: 1px solid white;
+  border-radius: 2px;
+}
+
+
+
+
+
+
+
+
 
 @media(max-width:872px){
     .navbar{display: none}
