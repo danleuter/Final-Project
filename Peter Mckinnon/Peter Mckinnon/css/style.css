@@ -4,10 +4,8 @@ html {
 } */
 
 body {
-    font-family: Roboto-Condensed, Arial, Helvetica, sans-serif;
     margin: 0px;
     padding: 0px;
-    width: 100%;
 }
 
 
@@ -19,6 +17,7 @@ body {
     width: 100%;
     height: 50px;
     background-color: rgba(255, 255, 255, 0.8);
+    z-index: 1;
     /* padding: 0px 10px; */
 }
 
@@ -267,8 +266,9 @@ i .fas {
     transition: color 0.4s ease;
   }
   
-/* main .dashboard-bg{
-  /* position: fixed; */
+
+.dashboard-bg{
+
   background: black;
   background-position: center center;
   background-repeat: no-repeat;
@@ -280,7 +280,7 @@ i .fas {
   align-items: center;
   height: 100vh; 
   width: 100vw;
-} */
+} 
 
 
 /* Landing Page */
@@ -300,13 +300,6 @@ i .fas {
     height: 100vh;
     /* width: 100vw; */
 }
-
-/* .landing-page::before {
-  content: "";
-  background-color: rgba(0, 0, 0, 0, 1);
-  background-size: cover;
-  z-index: 1;
-} */
 
 .landing-text {
   margin-top: 12rem;
