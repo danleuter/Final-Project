@@ -272,7 +272,8 @@ i .fas {
 
 /* Landing Page */
 
-.landing-page {
+.landing-page, .landing-page-articles {
+    position: sticky;
     background: url("../images/PM-bg.jpg");
     background-position: center center;
     background-repeat: no-repeat;
@@ -322,8 +323,32 @@ i .fas {
   border-radius: 2px;
 }
 
+.article-thumbnail-home {
+  margin: 10px;
+  background: url("../images/peter.jpg");
+  background-position: center center;
+  background-size: cover;
+  height: 100VH;
+  width: 600px;
+  border: 1px solid white;
+  border-radius: 2px;
+}
 
+.sidebar {
+  position: sticky;
+}
 
+.author {
+  margin: 0;
+}
+
+.featured-articles {
+  margin-top: 30px;
+}
+
+.card-box {
+  height: 100px;
+}
 
 
 

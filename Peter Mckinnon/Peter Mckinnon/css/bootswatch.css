@@ -4864,7 +4864,7 @@ input[type="button"].btn-block {
           flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #303030;
+  background-color: #ececec;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
@@ -4916,7 +4916,7 @@ input[type="button"].btn-block {
 .card-header {
   padding: 0.75rem 1.25rem;
   margin-bottom: 0;
-  background-color: #444;
+  background-color: #ffffff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
 
@@ -5673,7 +5673,7 @@ a.badge-dark:focus, a.badge-dark.focus {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding-left: 0;
+  padding-left: 5px;
   margin-bottom: 0;
 }
 
@@ -7056,7 +7056,7 @@ button.bg-dark:focus {
 }
 
 .border-light {
-  border-color: #303030 !important;
+  border-color: #cecece !important;
 }
 
 .border-dark {
