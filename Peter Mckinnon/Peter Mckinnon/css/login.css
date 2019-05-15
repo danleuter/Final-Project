@@ -1,0 +1,76 @@
+body {
+    font-family: Roboto-Condensed, Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+    position: relative;
+    background-color: black;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+#landing-page-dashboard {
+    background: black url("../images/PM-bg.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    color: black;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 100vh;
+    /* opacity: 0.5; */
+}
+
+.form-box {
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: auto;
+    width: 25rem;
+    height: 32rem;
+    border: 3px solid white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.info-text {
+    color: black;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    text-align: left;
+}
+
+.input-box {
+    display: inline-block;
+    font-weight: 200;
+    text-align: left;
+    font-size: 0.5rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.46875rem 1rem;
+    font-size: 1rem;
+    /* line-height: 1.5; */
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.login {
+    background: white;
+    color: black;
+}

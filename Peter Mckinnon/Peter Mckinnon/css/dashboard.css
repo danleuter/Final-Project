@@ -1,0 +1,128 @@
+body {
+    font-family: Roboto-Condensed, Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+.container-nav{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.menu-web{
+    position: fixed;
+    top: 0;
+    display: flex;
+    width: 100%;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.8);
+    /* padding: 0px 10px; */
+}
+
+.brandname {
+    margin-left: 40px;
+}
+
+.logo a {
+    font-family: Roboto, sans-serif;
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+}
+
+.nav-bar {
+    display: flex;
+    /* align-items: center; */
+    align-content: center;
+    justify-content: flex-end;
+    margin-right: 40px;
+    height: 100%;
+    /* background-color: white; */
+}
+
+.search-bar #article-search {
+    padding: 5px 10px;
+    background-color: transparent;
+    border: 1px solid #000;
+    /* border-radius: 30px; */
+    color: #2c2c2c;
+    height: 2rem;
+    margin: .55rem;
+    align-items: center;
+    line-height: normal;
+    font-size: 0.9rem;
+}
+
+.search-bar-right #article-search {
+  padding: 5px 10px;
+  background-color: transparent;
+  border: 1px solid #000;
+  /* border-radius: 30px; */
+  color: #2c2c2c;
+  height: 2rem;
+  margin: auto;
+  line-height: normal;
+  font-size: 0.9rem;
+}
+
+.nav-bar ul {
+    padding: 15px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    align-content: center;
+    align-items: center;
+}
+
+.nav-bar ul li a{
+    text-decoration: none;
+    padding: 5px 10px;
+    color: black;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+}
+
+.menu-btn {
+  padding: 0.7rem;
+  margin: 2px;
+}
+
+.menu-btn:hover  {
+  background-color: white;
+  box-shadow: 2px 2px 5px;
+  transition: 0.5s;
+}
+
+.bg-dashboard {
+    position: fixed;
+    background: url("../images/PM-bg.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
+    width: 100%;
+    z-index: -1;
+}
+
+.dashboard-content {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid white;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    margin: 70px 30px 30px 30px;
+}
+
+.side-bar {
+    background-color: gray;
+}
+
+.panel {
+    /* background-color: blue */
+}
