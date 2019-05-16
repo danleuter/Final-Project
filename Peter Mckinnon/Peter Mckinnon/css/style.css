@@ -41,7 +41,7 @@ body {
     letter-spacing: 0.5rem;
 }
 
-.navbar {
+.navbar-menu {
     display: flex;
     /* align-items: center; */
     align-content: center;
@@ -76,7 +76,7 @@ body {
   font-size: 0.9rem;
 }
 
-.navbar ul {
+.navbar-menu ul {
     padding: 15px;
     margin: 0;
     display: flex;
@@ -86,7 +86,7 @@ body {
     align-items: center;
 }
 
-.navbar ul li a{
+.navbar-menu ul li a{
     text-decoration: none;
     padding: 5px 10px;
     color: black;
@@ -117,7 +117,7 @@ i .fas {
 }
 
 
-.menu-wrap {
+.menu-wrap-hamburger {
     position: fixed;
     top: 0;
     width: 100%;
@@ -125,7 +125,7 @@ i .fas {
     z-index: 1;
   }
   
-  .menu-wrap .toggler {
+  .menu-wrap-hamburger .toggler {
     position: absolute;
     top: 0;
     right: 0;
@@ -136,7 +136,7 @@ i .fas {
     opacity: 0;
   }
   
-  .menu-wrap .hamburger {
+  .menu-wrap-hamburger .hamburger {
     position: absolute;
     top: 0;
     right: 0;
@@ -150,7 +150,7 @@ i .fas {
   }
   
   /* Hamburger Line */
-  .menu-wrap .hamburger > div {
+  .menu-wrap-hamburger .hamburger > div {
     position: relative;
     flex: none;
     width: 100%;
@@ -163,8 +163,8 @@ i .fas {
   }
   
   /* Hamburger Lines - Top & Bottom */
-  .menu-wrap .hamburger > div::before,
-  .menu-wrap .hamburger > div::after {
+  .menu-wrap-hamburger .hamburger > div::before,
+  .menu-wrap-hamburger .hamburger > div::after {
     content: '';
     position: absolute;
     z-index: 1;
@@ -175,43 +175,43 @@ i .fas {
   }
   
   /* Moves Line Down */
-  .menu-wrap .hamburger > div::after {
+  .menu-wrap-hamburger .hamburger > div::after {
     top: 10px;
   }
   
   /* Toggler Animation */
-  .menu-wrap .toggler:checked + .hamburger > div {
+  .menu-wrap-hamburger .toggler:checked + .hamburger > div {
     transform: rotate(135deg);
   }
   
   /* Turns Lines Into X */
-  .menu-wrap .toggler:checked + .hamburger > div:before,
-  .menu-wrap .toggler:checked + .hamburger > div:after {
+  .menu-wrap-hamburger .toggler:checked + .hamburger > div:before,
+  .menu-wrap-hamburger .toggler:checked + .hamburger > div:after {
     top: 0;
     transform: rotate(90deg);
   }
   
   /* Rotate On Hover When Checked */
-  .menu-wrap .toggler:checked:hover + .hamburger > div {
+  .menu-wrap-hamburger .toggler:checked:hover + .hamburger > div {
     transform: rotate(225deg);
   }
   
   /* Show Menu */
-  .menu-wrap .toggler:checked ~ .menu {
+  .menu-wrap-hamburger .toggler:checked ~ .menu {
     visibility: visible;
   }
   
-  .menu-wrap .toggler:checked ~ .menu > div {
+  .menu-wrap-hamburger .toggler:checked ~ .menu > div {
     transform: scale(1);
     transition-duration: 0.75s ease;
   }
   
-  .menu-wrap .toggler:checked ~ .menu > div > div {
+  .menu-wrap-hamburger .toggler:checked ~ .menu > div > div {
     opacity: 1;
     transition:  opacity 0.4s ease 0.4s;
   }
   
-  .menu-wrap .menu {
+  .menu-wrap-hamburger .menu {
     position: fixed;
     top: 0;
     left: 0;
@@ -225,7 +225,7 @@ i .fas {
     justify-content: center;
   }
   
-  .menu-wrap .menu > div {
+  .menu-wrap-hamburger .menu > div {
     background: rgba(255, 255, 255, 0.7);
     /* border: 1px solid black; */
     width: 100%;
@@ -238,7 +238,7 @@ i .fas {
     transition: all 0.4s ease;
   }
   
-  .menu-wrap .menu > div > div {
+  .menu-wrap-hamburger .menu > div > div {
     text-align: center;
     max-width: 90vw;
     max-height: 100vh;
@@ -246,13 +246,13 @@ i .fas {
     transition: opacity 0.4s ease;
   }
 
-  .menu-wrap .menu > div > div > ul {
+  .menu-wrap-hamburger .menu > div > div > ul {
     padding: 0px;
     margin: 0px;
   }
 
 
-  .menu-wrap .menu > div > div > ul > li {
+  .menu-wrap-hamburger .menu > div > div > ul > li {
     list-style: none;
     text-transform: uppercase;
     color: rgb(22, 22, 22);
@@ -261,7 +261,7 @@ i .fas {
     font-weight: 100;
   }
   
-  .menu-wrap .menu > div > div > ul > li > a {
+  .menu-wrap-hamburger .menu > div > div > ul > li > a {
     color: inherit;
     text-decoration: none;
     transition: color 0.4s ease;
@@ -311,32 +311,35 @@ i .fas {
 }
 
 .dashboard-bg {
-  margin-top: 70px;
+  margin-top: 100px;
 
 }
 
-.article-thumbnail {
+/* .article-thumbnail {
   margin: 10px;
   background: gray;
-  height: 100px;
+  height: 100%;
   width: 100px;
   border: 1px solid white;
   border-radius: 2px;
-}
+} */
 
-.article-thumbnail-home {
+.article-thumbnail {
   margin: 10px;
   background: url("../images/peter.jpg");
   background-position: center center;
   background-size: cover;
-  height: 100VH;
-  width: 600px;
+  /* height: 100%; */
+  width: 200px;
   border: 1px solid white;
   border-radius: 2px;
 }
 
 .sidebar {
-  position: sticky;
+  position: fixed;
+  width: 7rem;
+  top: 6rem;
+  /* width: 20vw; */
 }
 
 .author {
@@ -344,14 +347,19 @@ i .fas {
 }
 
 .featured-articles {
-  margin-top: 10px;
-  margin-bottom: 50px;
+  margin-bottom: 70px;
 }
 
 .card-box {
-  height: 100px;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  /* height: 100px; */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 170px;
+  margin-right: 10px;
+}
+
+.card-content {
+  width: 100%
 }
 
 .profile-pic {
@@ -445,12 +453,18 @@ i .fas {
 .work-with-us .contact-us {
   max-height: 500px;
 }
-.work-with-us .contact-us .showcase-picture img{
-  max-height: 500px;
+.showcase-picture img{
+  width: 100%;
 }
 
 
-.footer, .footer-container {
+footer {
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+
+.footer-container {
   margin: 0;
   margin-left: 0;
   display: flex;
@@ -475,12 +489,25 @@ i .fas {
 }
 
 
-@media(max-width:700px){
-    .navbar{display: none}
-    .search-bar #article-search{display: none}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:872px){
+    .navbar-menu{display: none !important}
+    .search-bar #article-search{display: none !important}
+    .showcase-picture img {
+      display: block;
+      width: 100%;
+    }
 }
 
-@media(min-width:700px){
-  .menu-wrap{display: none}
+@media(min-width:872px){
+  .menu-wrap-hamburger{display: none !important}
 }
 
