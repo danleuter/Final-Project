@@ -273,8 +273,8 @@ i .fas {
 
 /* Landing Page */
 
-.landing-page, .landing-page-articles {
-    position: sticky;
+.landing-page {
+    /* position: sticky; */
     background: url("../images/PM-bg.jpg");
     background-position: center center;
     background-repeat: no-repeat;
@@ -289,6 +289,28 @@ i .fas {
     height: 100vh;
     /* width: 100vw; */
 }
+
+.landing-page-articles {
+    position: fixed;
+    background: url("../images/canada-coin.jpg");
+    height: 100vh;
+    width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -4;
+}
+
+.content-inner-wrap {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: auto;
+  max-width: 700px;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
 
 .landing-text {
   margin-top: 12rem;
@@ -350,6 +372,8 @@ i .fas {
   margin-bottom: 70px;
 }
 
+
+
 .card-box {
   /* height: 100px; */
   margin-top: 20px;
@@ -369,6 +393,22 @@ i .fas {
 .profile-pic {
   align-content: center;
   align-self: inherit;
+}
+
+.pool-of-ideas {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 170px;
+  margin-right: 10px;
+}
+
+.card-warp{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-ideas{
+  margin:1rem;
 }
 
 .team-polarpro-page {
