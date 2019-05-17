@@ -411,6 +411,41 @@ i .fas {
   margin:1rem;
 }
 
+.create-article {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0;
+}
+
+.article-editor {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    margin-top: 50px;
+    width: 100%;
+    /* display: flex; */
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0;
+}
+
+#editor {
+  color: #000;
+}
+
 .team-polarpro-page {
   margin-top: 5rem;
 }

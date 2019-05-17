@@ -49,9 +49,30 @@
         </div>
     </nav>
 
-<div class="card card-body bg-primary">
-        <textarea id="editor" name="editor"></textarea>
-</div>
+    <form class="create-article" method="POST">
+        <div class="article-editor text bg-primary mb-3">
+            <!-- <div class="card-header">What's going on?</div> -->
+            <div class="card-body">
+                <h6 class="card-title"><label>Title</label>
+                <input type="text" class="form-control" name="article_title" placeholder="Title"></h6>
+                <h6 class="card-title"><label>Upload Thumbnail</label>
+                <div class="input-group-append"><input class="input-group-text" type="file">
+                        <!-- <span class="input-group-text">Upload</span> -->
+                      </div></h6>
+                <h6 class="card-title"><label>Content</label></h6>
+                <textarea class="text-primary" id="editor" name="article_content" placeholder="Some quick example text to build on the card title and make up the bulk of the card's content."></textarea>
+                <hr class="my-4">
+                <button type="button" class="btn btn-outline-success">Publish now</button>
+                <button type="button" class="btn btn-outline-info">Save to Draft</button>
+                <button type="button" class="btn btn-outline-danger">Cancel</button>
+            </div>
+        </div>
+    </form>
+
+
+
+
+
 
 
 <script>
