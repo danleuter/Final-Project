@@ -1,48 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Peter Mckinnon</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-</head>
-<body>
-    <nav class="menu-web">
-        <div class="menu-container">
-            <div class="brand-name" >
-                <p class="logo"><a href="index.html">Peter Mckinnon</a></p>
-            </div>
-            <div class="navbar-menu">
-                    <div class="search-bar"><input type="search" name="" id="article-search" placeholder="Search"></div>
-                <ul>
-                    <!-- <li><input type="search" name="" id="article-search" placeholder="Search"></li> -->
-                    <li class="menu-btn"><a href="#">Articles</a></li>
-                    <li class="menu-btn"><a href="#">Profile</a></li>
-                    <li class="menu-btn"><a href="#">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="menu-wrap-hamburger">
-            <input type="checkbox" class="toggler">
-            <div class="hamburger"><div></div></div>
-            <div class="menu">
-                <div>
-                <div>
-                    <ul class="search-bar-right">
-                        <li class="menu-btn"><a href="index.html">Home</a></li>
-                        <li class="menu-btn"><a href="#">Articles</a></li>
-                        <li class="menu-btn"><a href="#">Profile</a></li>
-                        <li class="menu-btn"><a href="#">Contact</a></li>
-                        <li><input type="search" name="" id="article-search" placeholder="Search"></li>
-                    </ul>
-                </div>
-                </div>
-            </div>
-        </div>
-    </nav>
+<?php
+	require('config/config.php');
+	require('config/db.php');
+
+    include('assets/inc/featured_post.inc.php');
+    include('assets/inc/header.php');
+    include('assets/inc/navbar_client.php');
+    
+?>
+
+
+
+
+
+
+
+
+    
 
 <!-- Main Body -->
 <main>
@@ -57,55 +30,34 @@
 <hr>
     <!-- Featured Articles -->
     <div class="featured-articles d-flex justify-content-center flex-wrap">
-        <div class="card-box-home col-lg-5">
-            <div class="card border-dark">
-                <div class="card-header author">John Doe<br><small>May 3, 2019</small></div>
-                <div class="article-content d-flex justify-content-around">
+        <?php foreach($posts as $post) : ?>
+            <div class="card-box col-lg-5">
+                <div class="cards border-dark d-flex">
                     <div class="article-thumbnail"></div>
-                    <div class="card-body">
-                        <h4 class="card-title">ARTICLE TITLE</h4>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div class="card-content">
+                            <div class="d-flex justify-content-between">
+                                <div class="card-header author"><?php echo $post['art_author']; ?><br><small class="badge badge-info"><?php echo $post['art_date']; ?></small>
+                                <a class="badge badge-primary" href="<?php echo ROOT_URL; ?>pages/articles.php?art_id=<?php echo $post['art_id']; ?>">Read More</a>
+                            </div>
+                        </div>
+                        <div class="article-content">
+                            <div class="card-body">
+                                <h4 class="card-title"><?php echo $post['art_title']; ?></h4>
+                                <div class="card-text"><?php echo $post['art_desc']; ?></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="card-box-home col-lg-5">
-            <div class="card border-dark">
-                <div class="card-header author">John Doe<br><small>May 3, 2019</small></div>
-                <div class="article-content d-flex justify-content-around">
-                    <div class="article-thumbnail"></div>
-                    <div class="card-body">
-                        <h4 class="card-title">ARTICLE TITLE</h4>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card-box-home col-lg-5">
-            <div class="card border-dark">
-                <div class="card-header author">John Doe<br><small>May 3, 2019</small></div>
-                <div class="article-content d-flex justify-content-around">
-                    <div class="article-thumbnail"></div>
-                    <div class="card-body">
-                        <h4 class="card-title">ARTICLE TITLE</h4>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card-box-home col-lg-5">
-            <div class="card border-dark">
-                <div class="card-header author">John Doe<br><small>May 3, 2019</small></div>
-                <div class="article-content d-flex justify-content-around">
-                    <div class="article-thumbnail"></div>
-                    <div class="card-body">
-                        <h4 class="card-title">ARTICLE TITLE</h4>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php endforeach; ?>
     </div>
+
+   
+
+
+
+
+
 <hr>
     <!-- Profile  -->
     <div class="team-polarpro-page">
@@ -166,7 +118,7 @@
 <footer>
     <div class="footer-container">
         <div class="footer-brand-name" >
-            <p class="footer"><a href="index.html">Peter Mckinnon</a></p>
+            <p class="footer">Peter Mckinnon</p>
         </div>
     </div>
 </footer>

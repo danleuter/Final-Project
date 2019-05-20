@@ -273,8 +273,8 @@ i .fas {
 
 /* Landing Page */
 
-.landing-page, .landing-page-articles {
-    position: sticky;
+.landing-page {
+    /* position: sticky; */
     background: url("../images/PM-bg.jpg");
     background-position: center center;
     background-repeat: no-repeat;
@@ -289,6 +289,28 @@ i .fas {
     height: 100vh;
     /* width: 100vw; */
 }
+
+.landing-page-articles {
+    position: fixed;
+    background: url("../images/canada-coin.jpg");
+    height: 100vh;
+    width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -4;
+}
+
+.content-inner-wrap {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: auto;
+  max-width: 700px;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
 
 .landing-text {
   margin-top: 12rem;
@@ -309,8 +331,11 @@ i .fas {
   letter-spacing: 0.05rem;
   /* text-transform: uppercase; */
 }
+.dashboard-bg{
+  margin-top: 100px;
+}
 
-.dashboard-bg {
+.published-articles, .draft-articles, .pool-of-ideas {
   margin-top: 100px;
 
 }
@@ -324,7 +349,7 @@ i .fas {
   border-radius: 2px;
 } */
 
-.article-thumbnail {
+.article-thumbnail, .article-thumbnail-home {
   margin: 10px;
   background: url("../images/peter.jpg");
   background-position: center center;
@@ -332,8 +357,13 @@ i .fas {
   /* height: 100%; */
   width: 200px;
   border: 1px solid white;
-  border-radius: 2px;
 }
+
+.article-thumbnail-home {
+  height: 100%;
+}
+
+
 
 .sidebar {
   position: fixed;
@@ -350,12 +380,16 @@ i .fas {
   margin-bottom: 70px;
 }
 
+
+.articles {
+  margin-left: 10.625rem
+}
+
 .card-box {
   /* height: 100px; */
+  
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-left: 170px;
-  margin-right: 10px;
 }
 
 .card-box-home {
@@ -366,9 +400,160 @@ i .fas {
   width: 100%
 }
 
+.card-text {
+  overflow: hidden;
+}
+
+.card .card-header {
+  position: relative;
+  height: 48px;
+}
+
+.card .card-header .profile-img {
+  width: 96px;
+  height: 96px;
+  border-radius: 1000px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 6px solid #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+}
+
+.card .card-body {
+  padding: 10px 40px;
+}
+
+.card .card-body .full-name {
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 10px 0 0;
+}
+
+.card .card-body .username {
+  font-size: 13px;
+  color: #777;
+  margin: 5px 0 0;
+}
+
+.card .card-body .city {
+  font-weight: 500;
+  margin: 10px 0 0;
+}
+
+.card .card-body .desc {
+  line-height: 24px;
+}
+
+.card .social-icon {
+  font-size: 18px;
+  margin: 0 7px;
+}
+
+.card .social-icon.facebook {
+  color: #3b5999;
+}
+
+.card .social-icon.twitter {
+  color: #55acee;
+}
+
+.card .social-icon.tumblr {
+  color: #34465d;
+}
+
+.card .social-icon.youtube {
+  color: #cd201f;
+}
+
+.card .social-icon.linkedin {
+  color: #0077b5;
+}
+
+.card .social-icon.google-plus {
+  color: #dd4b39;
+}
+
+.card .card-footer {
+  display: table;
+  width: 100%;
+  border-top: 1px solid #e6e6e6;
+}
+
+.card .card-footer .col {
+  display: table-cell;
+  padding: 5px 10px;
+  font-size: 15px;
+}
+
+.card .card-footer .count {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.vr {
+  border-right: 1px solid #e6e6e6;
+}
+
+
+
+
 .profile-pic {
   align-content: center;
   align-self: inherit;
+}
+
+.pool-of-ideas {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 170px;
+  margin-right: 10px;
+}
+
+.card-warp{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-ideas{
+  margin:1rem;
+}
+
+
+.create-article {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0;
+}
+
+.article-editor {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    margin-top: 50px;
+    width: 100%;
+    /* display: flex; */
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0;
+}
+
+#editor {
+  color: #000;
 }
 
 .team-polarpro-page {
@@ -518,9 +703,19 @@ footer {
 @media screen and (max-width:872px){
     .navbar-menu{display: none !important}
     .search-bar #article-search{display: none !important}
-    .showcase-picture img {
+    /* .showcase-picture img {
       display: block;
       width: 100%;
+    } */
+
+    .sidebar{ z-index: 2;}
+    .sidebar .list-group {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      margin-top: -20px;
+      position: fixed;
+      
     }
 }
 
@@ -528,3 +723,21 @@ footer {
   .menu-wrap-hamburger{display: none !important}
 }
 
+@media screen and (max-width: 575px) {
+  .card {
+      width: 96%;
+  }
+
+  .card .card-body {
+      padding: 10px 20px;
+  }
+
+  .card .card-footer .col {
+      padding: 0 10px;
+  }
+
+  .card .card-footer .count {
+      display: block;
+      margin-bottom: 5px;
+  }
+}
