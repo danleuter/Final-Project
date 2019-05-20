@@ -1,25 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Peter Mckinnon</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/bootswatch.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-</head>
-<body>
-    <nav class="menu-web">
+<nav class="menu-web ">
         <div class="menu-container">
             <div class="brand-name" >
-                <p class="logo"><a href="index.html">Peter Mckinnon</a></p>
+                <p class="logo"><a href="index.php">Peter Mckinnon</a></p>
             </div>
-            <div class="navbar">
+            <div class="navbar-menu">
                     <div class="search-bar"><input type="search" name="" id="article-search" placeholder="Search"></div>
                 <ul>
                     <!-- <li><input type="search" name="" id="article-search" placeholder="Search"></li> -->
-                    <li class="menu-btn"><a href="#">Articles</a></li>
+                    <li class="menu-btn"><a href="pages/showcase.php">Articles</a></li>
                     <li class="menu-btn"><a href="#">Profile</a></li>
                     <li class="menu-btn"><a href="#">Contact</a></li>
                 </ul>
@@ -32,8 +20,8 @@
                 <div>
                 <div>
                     <ul class="search-bar-right">
-                        <li class="menu-btn"><a href="index.html">Home</a></li>
-                        <li class="menu-btn"><a href="#">Articles</a></li>
+                        <li class="menu-btn"><a href="index.php">Home</a></li>
+                        <li class="menu-btn"><a href="pages/showcase.php">Articles</a></li>
                         <li class="menu-btn"><a href="#">Profile</a></li>
                         <li class="menu-btn"><a href="#">Contact</a></li>
                         <li><input type="search" name="" id="article-search" placeholder="Search"></li>
@@ -43,9 +31,3 @@
             </div>
         </div>
     </nav>
-<!-- end of navbar -->
-
-<div class="landing-page-articles"></div>
-    
-</body>
-</html>

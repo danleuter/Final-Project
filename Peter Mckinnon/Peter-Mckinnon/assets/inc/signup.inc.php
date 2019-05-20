@@ -16,24 +16,24 @@ $confirm = mysqli_real_escape_string($conn, $_POST['confirm']);
 //$que = "INSERT INTO author (firstname, lastname, username, email, password) VALUES('$fname', '$lname', '$uname', '$email', '$password', )";
 
 if(empty($uname) || empty($email) || empty($password)) {
-    header("Location: ../dashboard/signup.php?error=emptyfields&username=".$uname."&email".$email);
+    header("Location: ../dashboard/loginandregister.php?error=emptyfields&username=".$uname."&email".$email);
     exit();
 } 
 else if (!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9]*$/", $uname)){
-    header("Location: ../dashboard/signup.php?error=invalidemail&username");
+    header("Location: ../dashboard/loginandregister.php?error=invalidemail&username");
     exit();
 }
 else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    header("Location: ../dashboard/signup.php?error=invalidemail&username=".$uname);
+    header("Location: ../dashboard/loginandregister.php?error=invalidemail&username=".$uname);
     exit();
 } 
 
 else if (!preg_match("/^[a-zA-Z0-9]*$/", $uname)) {
-    header("Location: ../dashboard/signup.php?error=invalidusername&email=".$email);
+    header("Location: ../dashboard/loginandregister.php?error=invalidusername&email=".$email);
     exit();
 } 
 else if ($password !== $confirm) {
-    header("Location: ../dashboard/signup.php?error=passwordcheck=".$uname."&email".$email);
+    header("Location: ../dashboard/loginandregister.php?error=passwordcheck=".$uname."&email".$email);
     exit();
 }
 else {
@@ -41,7 +41,7 @@ else {
     $sql = "SELECT username FROM author WHERE username = ?";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)) {
-        header("Location: ../dashboard/signup.php?error=sqlerror2");
+        header("Location: ../dashboard/loginandregister.php?error=sqlerror2");
         exit();
     }
     else {
@@ -50,7 +50,7 @@ else {
         mysqli_stmt_store_result($stmt);
         $resultCheck = mysqli_stmt_num_rows($stmt);
         if($resultCheck > 0){
-            header("Location: ../dashboard/signup.php?error=usernameTaken&email".$email);
+            header("Location: ../dashboard/loginandregister.php?error=usernameTaken&email".$email);
             exit();
 
         }
@@ -59,7 +59,7 @@ else {
             $sql = "INSERT INTO author (firstname, lastname, username, email, password) VALUES (?, ?, ?, ?, ?)";
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt, $sql)) {
-                header("Location: ../dashboard/signup.php?error=sqlerror1s2");
+                header("Location: ../dashboard/loginandregister.php?error=sqlerror1s2");
                 exit();
             }
             else {
@@ -69,7 +69,7 @@ else {
 
                 mysqli_stmt_bind_param($stmt, "sssss", $fname, $lname, $uname, $email, $hashedPwd);
                 mysqli_stmt_execute($stmt);
-                    header("Location: ../dashboard/signup.php?signup=success");
+                    header("Location: ../index.php");
                     exit();
             }
 
@@ -88,6 +88,6 @@ mysqli_stmt_close($stmt);
 mysqli_close($conn);
 }
 else {
-header("Location: ../dashboard/signup.php");
+header("Location: ../dashboard/loginandregister.php");
 exit();  
 }

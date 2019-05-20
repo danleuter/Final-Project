@@ -7,23 +7,15 @@
     include('assets/inc/navbar_client.php');
     
 ?>
-
-
-
-
-
-
-
-
     
 
 <!-- Main Body -->
 <main>
     <!-- landing page -->
     <div class="landing-page">
-        <div class="landing-text">
-            <h1>Inspire. Travel. Learn.</h1>
-            <p>Photographer & Filmmaker. Lover of coffee and good stories.</p>
+        <div class="landing-text text-white">
+            <h1 class="text-white">Inspire. Travel. Learn.</h1>
+            <p class='text-white initialism'>Photographer & Filmmaker. Lover of coffee and good stories.</p>
         </div>
     </div>
     <!-- End of Landing Page -->
@@ -33,7 +25,8 @@
         <?php foreach($posts as $post) : ?>
             <div class="card-box col-lg-5">
                 <div class="cards border-dark d-flex">
-                    <div class="article-thumbnail"></div>
+                    <div class="article-thumbnail" ></div>
+                    <img src = '<?php echo str_replace("C:/xampp/htdocs/", "http://localhost/", $post['art_image']); ?>'  width = "200px" height = "200px"/>
                         <div class="card-content">
                             <div class="d-flex justify-content-between">
                                 <div class="card-header author"><?php echo $post['art_author']; ?><br><small class="badge badge-info"><?php echo $post['art_date']; ?></small>
@@ -51,11 +44,6 @@
             </div>
         <?php endforeach; ?>
     </div>
-
-   
-
-
-
 
 
 <hr>
@@ -87,7 +75,7 @@
                 <div class="form-group">
                     <label class="form-label" for="exampleInputEmail1">Email address</label>
                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                    <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 <div class="form-group">
                     <label class="form-label" for="exampleInputPassword1">Password</label>
@@ -97,30 +85,16 @@
                     <label class="form-label" for="exampleTextarea">Message</label>
                     <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
                 </div>
-                <div><legend></legend></div>
-                <!-- <div class="form-check">
-                    <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" value="" checked="">
-                        <small>I have read and agreed to t</small>
-                    </label>
-                </div> -->
+                
                 <button type="submit" class="btn btn-light btn-submit" >Submit</button>
             </form>
-            <!-- <div class="showcase-picture col">
-                <img src="images/work-with-us.jpg" alt="">
-            </div> -->
+          
         </div>
     </div>
 
 </main>
 <!-- Main Body -->
 
-<footer>
-    <div class="footer-container">
-        <div class="footer-brand-name" >
-            <p class="footer">Peter Mckinnon</p>
-        </div>
-    </div>
-</footer>
+
 </body>
 </html>

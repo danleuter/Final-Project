@@ -1,10 +1,9 @@
 <?php
 	require('../../config/config.php');
 	require('../../config/db.php');
-
+    
 	// Check For Submit
 	if(isset($_POST['submit1'])){
-
 
         // Get form data text
         $title = mysqli_real_escape_string($conn, $_POST['art_title']);
@@ -12,21 +11,35 @@
         $body = mysqli_real_escape_string($conn, $_POST['art_content']);
         // $date = mysqli_real_escape_string($conn, $_POST['art_date']);
         $author = mysqli_real_escape_string($conn, $_POST['art_author']);
-        
         // Get form data files
-        $image = $_FILES['art_image']['name'];
-        $image_tmp =  $_FILES['art_image']['tmp_name'];
+        $image = mysqli_real_escape_string($conn, $_FILES['art_image']['name']);
+        $image_tmp = $_FILES['art_image']['tmp_name'];
 
-        move_uploaded_file($image_tmp, "../images/$image");
-        
+        //folder where images will be uploaded
+        $folder = 'imagesuploadedf/';
 
-		$query = "INSERT INTO posts (art_title, art_author, art_desc, art_content, art_image, art_status) VALUES('$title', '$author', '$desc', '$body', '$image',  1)";
+        $upload_dir = $_SERVER['DOCUMENT_ROOT'] . "/Peter-Mckinnon/images/";
+       
+        if (is_dir($upload_dir) && is_writable($upload_dir)) {
+            $directory =  $upload_dir.$image;
+            $moved = move_uploaded_file($image_tmp, $directory);
 
-		if(mysqli_query($conn, $query)){
-			header('Location: '.ROOT_URL_ADMIN.'');
-		} else {
-			echo 'ERROR: '. mysqli_error($conn);
-		}
+            if( $moved ) {
+                $query = "INSERT INTO posts (art_title, art_author, art_desc, art_content, art_image, art_status) VALUES('$title', '$author', '$desc', '$body', '$directory',  1)";
+    
+                if(mysqli_query($conn, $query)){
+                    header('Location: '.ROOT_URL_ADMIN.'');
+                } else {
+                    echo 'ERROR: '. mysqli_error($conn);
+                }       
+              } else {
+                echo "Not uploaded because of error #".$_FILES["art_image"]["error"];
+                exit;
+            }
+        } else {
+            echo 'Upload directory is not writable, or does not exist.';
+        }
+
     };
 
     if(isset($_POST['submit2'])){
@@ -44,64 +57,17 @@
 		} else {
 			echo 'ERROR: '. mysqli_error($conn);
 		}
-	}
+    }
+    
+    include("../inc/header_dashboard.php");
+    include('../inc/navbar.php');
 ?>
 
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Peter Mckinnon</title>
-    
- <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/jodit.min.css">
-    <script src="../js/jodit.min.js"></script>
 
-</head>
-<body>
 
-<!-- include navbar using php -->
-    <nav class="menu-web">
-        <div class="menu-container">
-            <div class="brand-name" >
-                <p class="logo"><a href="index.html">Peter Mckinnon</a></p>
-            </div>
-            <div class="navbar-menu">
-                <div class="search-bar"><input type="search" name="" id="article-search" placeholder="Search"></div>
-                    <ul>
-                        <!-- <li><input type="search" name="" id="article-search" placeholder="Search"></li> -->
-                        <li class="menu-btn"><a href="#">Articles</a></li>
-                        <li class="menu-btn"><a href="#">Profile</a></li>
-                        <li class="menu-btn"><a href="#">Contact</a></li>
-                    </ul>
-            </div>
-        </div>
-        <div class="menu-wrap-hamburger">
-            <input type="checkbox" class="toggler">
-            <div class="hamburger"><div></div></div>
-            <div class="menu">
-                <div>
-                    <div>
-                        <ul class="search-bar-right">
-                            <li class="menu-btn"><a href="index.php">Home</a></li>
-                            <li class="menu-btn"><a href="#">Articles</a></li>
-                            <li class="menu-btn"><a href="#">Profile</a></li>
-                            <li class="menu-btn"><a href="#">Contact</a></li>
-                            <li><input type="search" name="" id="article-search" placeholder="Search"></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <form class="create-article" method="post" action="<?php $_SERVER['PHP_SELF']; ?>">
+    <form class="create-article" method="post" action="<?php $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data">
         <div class="article-editor text bg-primary mb-3">
             <!-- <div class="card-header">What's going on?</div> -->
             <div class="card-body">
@@ -113,9 +79,13 @@
                 <input type="text" class="form-control" name="art_author" placeholder="Peter Mckinnon"/></h6>
                 <h6 class="card-title"><label>Category</label>
                 <input type="text" class="form-control" name="art_category" placeholder="Category"/></h6>
+
+                <!-- dito bugs -->
                 <h6 class="card-title"><label>Upload Thumbnail</label>
                 <div class="input-group-append"><input class="input-group-text" type="file" name="art_image">
                 </div></h6>
+
+                <!-- dito bugs -->
                 <hr class="my-4">
                 <h6 class="card-title"><label>Content</label></h6>
                 <textarea class="text-primary" id="editor" name="art_content" placeholder="Some quick example text to build on the card title and make up the bulk of the card's content."></textarea>

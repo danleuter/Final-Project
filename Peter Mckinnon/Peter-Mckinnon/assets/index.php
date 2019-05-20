@@ -1,7 +1,18 @@
 <?php
+
 	require('../config/config.php');
     require('../config/db.php');
     
+    include('inc/profile.inc.php');
+    
+    if ( isset( $_SESSION['userId'] ) ) {
+        // Grab user data from the database using the user_id
+        // Let them access the "logged in only" pages
+    } else {
+        // Redirect them to the login page
+        header('Location: ' .ROOT_URL_ADMIN.'dashboard/loginandregister.php');
+        //echo 'error';
+    }
 
     if(isset($_POST['delete'])){
 
@@ -18,7 +29,7 @@
         } else {
             echo 'ERROR: '. mysqli_error($conn);
         }
-    }
+    };
     
 
 	// Create Query
@@ -30,13 +41,13 @@
 
 	// Fetch Data
 	$posts = mysqli_fetch_all($result, MYSQLI_ASSOC);
-	//var_dump($posts);
 
 	// Free Result
 	mysqli_free_result($result);
 
 	// Close Connection
     mysqli_close($conn);
+    
     
     
 ?>
@@ -57,11 +68,10 @@
 <body>
    
         <?php 
-            include('inc/navbar.php'); 
+            include('inc/navbar.php');
             
+           ?>
 
-
-        ?>
 <div class="sidebar">
     <div class="list-group">
             <a href="<?php echo ROOT_URL_ADMIN; ?>index.php" class="list-group-item list-group-item-action active">
@@ -73,7 +83,7 @@
             </a>
             <a href="<?php echo ROOT_URL_ADMIN; ?>inc/profile_dash.php" class="list-group-item list-group-item-action">Profile
             </a>
-            <a href="#" class="list-group-item list-group-item-action">Settings
+            <a href="#" class="list-group-item list-group-item-action">Messages
             </a>
     </div>
 </div>
@@ -158,6 +168,7 @@
 
 </script>
 
+ <?php include('inc/footer.php'); ?>
 
 </body>
 </html>

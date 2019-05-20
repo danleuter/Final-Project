@@ -2,21 +2,11 @@
     require('../../config/config.php');
     require('../../config/db.php');
    
-    // Create Query
-    // $query = 'SELECT * FROM posts WHERE art_status = 2 ORDER BY art_date DESC LIMIT 4';
-
-	// Get Result
-	//$result = mysqli_query($conn, $query);
-
-	// Fetch Data
-	// $drafts = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-	// Free Result
-	// mysqli_free_result($result);
+    include('profile.inc.php');
+    mysqli_free_result($result);
 
 	// Close Connection
-    // mysqli_close($conn);
-
+    mysqli_close($conn);
     include("header_dashboard.php");
     include('navbar.php');
     ?>
@@ -30,9 +20,9 @@
         </a>
         <a href="<?php echo ROOT_URL_ADMIN; ?>inc/pool_of_ideas.php" class="list-group-item list-group-item-action active">Pool of Ideas
         </a>
-        <a href="<?php echo ROOT_URL_ADMIN; ?>inc/profile_dash.php" class="list-group-item list-group-item-action active>Profile
+        <a href="<?php echo ROOT_URL_ADMIN; ?>inc/profile_dash.php" class="list-group-item list-group-item-action">Profile
         </a>
-        <a href="#" class="list-group-item list-group-item-action">Settings
+        <a href="#" class="list-group-item list-group-item-action">Message
         </a>
     </div>
 </div>

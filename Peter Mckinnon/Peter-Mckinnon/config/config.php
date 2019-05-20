@@ -1,6 +1,5 @@
 <?php
-
-session_start();
+	session_start();
 	define('ROOT_URL', 'http://localhost/Peter-Mckinnon/');
 	define('ROOT_URL_ADMIN', 'http://localhost/Peter-Mckinnon/assets/');
 	define('DB_HOST', 'localhost');

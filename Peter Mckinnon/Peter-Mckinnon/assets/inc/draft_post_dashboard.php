@@ -2,8 +2,9 @@
     require('../../config/config.php');
     require('../../config/db.php');
 
+    include('profile.inc.php');
+
     if(isset($_POST['publish'])){
-        echo 'HELOO';
 
         // Get form data text
         $update_id = mysqli_real_escape_string($conn, $_POST['update_id']);
@@ -27,12 +28,7 @@
             echo 'ERROR: '. mysqli_error($conn);
         }
     }
-    
-            
-            
-
-
-   
+     
     // Create Query
     $query = 'SELECT * FROM posts WHERE art_status = 2 ORDER BY art_date DESC LIMIT 4';
     // $query2 = 'SELECT * FROM posts WHERE '
@@ -42,16 +38,15 @@
 
 	// Fetch Data
 	$drafts = mysqli_fetch_all($result, MYSQLI_ASSOC);
-	//var_dump($posts);
 
 	// Free Result
 	mysqli_free_result($result);
 
 	// Close Connection
     mysqli_close($conn);
-
-    include("header_dashboard.php");
     
+    include("header_dashboard.php");
+    include('navbar.php');
     
     ?>
 
@@ -66,7 +61,7 @@
         </a>
         <a href="#" class="list-group-item list-group-item-action">Profile
         </a>
-        <a href="#" class="list-group-item list-group-item-action">Settings
+        <a href="#" class="list-group-item list-group-item-action">Messages
         </a>
     </div>
 </div>
@@ -86,16 +81,14 @@
                             <div class="card-header d-flex justify-content-between">
                                 <div class=" author">Authored by: <h4><?php echo $draft['art_author']; ?></h4><small class="badge outline-primary">on <?php echo $draft['art_date']; ?></small>
                                 </div>
-                                        <div class="btn btn-sm btn-info align-items"><a href="<?php echo ROOT_URL_ADMIN; ?>dashboard/update.php?art_id=<?php echo $draft['art_id']; ?>">Edit</a></div>
-                                        <form class="buttons d-flex" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                                    <div class="btn btn-sm btn-info align-items"><a href="<?php echo ROOT_URL_ADMIN; ?>dashboard/update.php?art_id=<?php echo $draft['art_id']; ?>">Edit</a></div>
+                                    <form class="buttons d-flex" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                                         <input type="hidden" name="update_id" value="<?php echo $post['art_id']; ?>" />
                                         <input type="submit" name="publish" value="PUBLISH" class="btn btn-sm btn-outline-success"/>    
                                         <input type='hidden' name="delete_id" value="<?php echo $draft['art_id']; ?>">
                                         <input type="submit" name="delete" value="Delete" class='btn btn-sm btn-danger'>
-                                        </form>
-                                    
-                                   
-                            </div>
+                                    </form>
+                                </div>
                             <div class="article-content">
                                 <div class="card-body">
                                     <h4 class="card-title"><?php echo $draft['art_title']; ?></h4>

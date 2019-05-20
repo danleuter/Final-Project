@@ -1,7 +1,7 @@
 <?php 
     require('../../config/config.php');
     require('../../config/db.php');
-
+    
 
 
 
@@ -28,7 +28,7 @@
             <div class="login-signup">
                 <form action="<?php echo ROOT_URL_ADMIN; ?>inc/login.inc.php" method="POST">
                     <div class="form-box">
-                        <label  class="info-text">Psername: *</label><br>
+                        <label  class="info-text">Username: *</label><br>
                         <input class="info-text input-box" name='username' type="text" value="" placeholder="username"><br>
                         <label  class="info-text">Password: *</label><br>
                         <input class="info-text input-box" name='password' type="password" placeholder="password"><br>

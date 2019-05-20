@@ -314,19 +314,20 @@ i .fas {
 
 .landing-text {
   margin-top: 12rem;
+  text-shadow:  0 1px 0 #333;
 }
 
 .landing-text h1 {
   margin-bottom: 10px;
-  font-weight: 300;
+  font-weight: 300 !important;
   font-family: Roboto, Arial, Helvetica, sans-serif;
-  letter-spacing: 0.8rem;
+  letter-spacing: 1.2rem !important;
   text-transform: uppercase;
 }
 
 .landing-text p {
   margin-top: 10px;
-  font-weight: 300;
+  font-weight: 50;
   font-family: Roboto, Arial, Helvetica, sans-serif;
   letter-spacing: 0.05rem;
   /* text-transform: uppercase; */
@@ -661,9 +662,10 @@ legend h3 {
   margin: 20px auto 30px; 
 }
 
-footer {
+p#footer.text-white.text-uppercase {
   margin-bottom: 0px;
   width: 100%;
+  letter-spacing: 0.5rem
 }
 
 .footer-container {
@@ -681,14 +683,6 @@ footer {
   margin-left: 40px;
 }
 
-.footer a {
-  font-family: Roboto, sans-serif;
-  text-decoration: none;
-  color: rgb(255, 255, 255);
-  text-transform: uppercase;
-  letter-spacing: 0.5rem;
-  margin: auto;
-}
 
 
 

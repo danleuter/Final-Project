@@ -172,10 +172,6 @@
 var editor = new Jodit('#editor');
 editor.value = '<?php echo $post['art_content']; ?>';
 
-// $('textarea').each(function () {
-//     var editor = new Jodit(this);
-//     editor.value = '<p>start</p>';
-// });
 </script>
 
 </body>
