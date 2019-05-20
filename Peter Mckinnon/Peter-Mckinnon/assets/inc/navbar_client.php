@@ -1,14 +1,14 @@
 <nav class="menu-web ">
         <div class="menu-container">
             <div class="brand-name" >
-                <p class="logo"><a href="index.php">Peter Mckinnon</a></p>
+                <p class="logo"><a href="<?php echo ROOT_URL; ?>">Peter Mckinnon</a></p>
             </div>
             <div class="navbar-menu">
                     <div class="search-bar"><input type="search" name="" id="article-search" placeholder="Search"></div>
                 <ul>
                     <!-- <li><input type="search" name="" id="article-search" placeholder="Search"></li> -->
-                    <li class="menu-btn"><a href="pages/showcase.php">Articles</a></li>
-                    <li class="menu-btn"><a href="#">Profile</a></li>
+                    <li class="menu-btn"><a href="<?php echo ROOT_URL; ?>pages/showcase.php">Articles</a></li>
+                    <li class="menu-btn"><a href="<?php echo ROOT_URL; ?>index.php#profile">Profile</a></li>
                     <li class="menu-btn"><a href="#">Contact</a></li>
                 </ul>
             </div>
@@ -20,9 +20,9 @@
                 <div>
                 <div>
                     <ul class="search-bar-right">
-                        <li class="menu-btn"><a href="index.php">Home</a></li>
-                        <li class="menu-btn"><a href="pages/showcase.php">Articles</a></li>
-                        <li class="menu-btn"><a href="#">Profile</a></li>
+                        <li class="menu-btn"><a href="<?php echo ROOT_URL; ?>">Home</a></li>
+                        <li class="menu-btn"><a href="<?php echo ROOT_URL; ?>pages/showcase.php">Articles</a></li>
+                        <li class="menu-btn"><a href="<?php echo ROOT_URL; ?>index.php#profile">Profile</a></li>
                         <li class="menu-btn"><a href="#">Contact</a></li>
                         <li><input type="search" name="" id="article-search" placeholder="Search"></li>
                     </ul>

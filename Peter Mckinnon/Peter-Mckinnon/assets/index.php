@@ -111,6 +111,7 @@
                         <div class="article-thumbnail"></div>
                         <div class="card-content">
                             <div class="card-header d-flex justify-content-between">
+                            <img src='<?php echo str_replace("C:/XAMPP/HTDOCS/" , "LOCALHOST/" , $_FILES["art_image"]); ?>'>
                                 <div class=" author">Authored by: <h4><?php echo $post['art_author']; ?></h4><small class="badge outline-primary">on <?php echo $post['art_date']; ?></small>
                                 </div>
                                 <div class='d-flex flex-column'>
